@@ -164,17 +164,17 @@ print('Exercise 8:', product(2, 5, 5))
 # basic_calculator(10, 5, 'divide') should return 2.
 #
 # Define the function and then call it below.
-def basic_calculator(x,y,op):
-    if op == "add":
-        return x+y
-    elif op=="subtract":
-        return x-y
-    elif op=="multiply":
-        return x*y
-    elif op=="d ivide":
-        if y==0:
+def basic_calculator(x, y, operation):
+    if operation == "add":
+        return x + y
+    elif operation == "subtract":
+        return x - y
+    elif operation == "multiply":
+        return x * y
+    elif operation == "divide":
+        if y == 0:
             return "cannot divide by zero."
-        return x/y
+        return x / y
     else:
         return -1
 
