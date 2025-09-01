@@ -1,28 +1,3 @@
-<h1>
-  <span class="headline">Functions Lab</span>
-  <span class="subhead">Exercise</span>
-</h1>
-
-In this lab, you'll get hands-on practice defining and calling functions in Python. By the end, you will be able to:
-
-- Understand and apply Python's function syntax.
-- Return values from functions based on given parameters.
-- Manipulate simple data types through function parameters.
-
-> We understand that some of the exercises in this lab may seem very basic or even easy. This simplicity is intentional. The primary goal is to provide ample opportunity to practice writing Python functions. By focusing on repetition, you can become more comfortable with the syntax and mechanics of function definition and calling.
-
-## Getting Started
-
-- For each exercise, copy the provided code into a new Python script file named `exercises.py`.
-- Follow the exercise instructions carefully to complete the function definitions.
-- After completing each exercise, run `python3 exercises.py` in your terminal to test your code and see the output.
-
-Let's dive in and start coding!
-
-
-## Exercise 1: Calculate Area of a Triangle
-
-```python
 # Exercise 1: Calculate Area of a Triangle
 #
 # Write a function named `calculate_area_triangle` that takes the base and height of a triangle and returns the area.
@@ -35,13 +10,19 @@ Let's dive in and start coding!
 # Define your function and call it below.
 
 
+# ANS EX.1
 
-print('Exercise 1:', calculate_area_triangle(10, 5))
-```
 
-## Exercise 2: Calculate Simple Interest
+def calculate_area_triangle(base, height):
+    return (base * height) / 2
 
-```python
+# Test 
+print('Exercise 1:', calculate_area_triangle(10, 5))  
+print('Exercise 1:', calculate_area_triangle(7, 3))   
+
+
+
+##########################################
 # Exercise 2: Calculate Simple Interest
 #
 # Write a function named `simple_interest` that takes principal, rate of interest (as a percentage), and time (years).
@@ -54,13 +35,18 @@ print('Exercise 1:', calculate_area_triangle(10, 5))
 # Define your function and call it to see the result.
 
 
+# ANS EX.2
 
-print('Exercise 2:', simple_interest(1000, 5, 2))
-```
 
-## Exercise 3: Apply a Discount
+def simple_interest(principal, rate, time):
+    return (principal * rate * time) / 100
 
-```python
+# Test 
+print('Exercise 2:', simple_interest(1000, 5, 2))     
+print('Exercise 2:', simple_interest(1500, 3.5, 5))   
+
+
+##########################################
 # Exercise 3: Apply a Discount
 #
 # Write a function named `apply_discount` that takes a product's price and a discount percentage (from 0 to 100).
@@ -74,12 +60,17 @@ print('Exercise 2:', simple_interest(1000, 5, 2))
 
 
 
-print('Exercise 3:', apply_discount(100, 25))
-```
+# ANS EX.3
 
-## Exercise 4: Convert Temperature
 
-```python
+def apply_discount(price, discount_percent):
+    return price - (price * discount_percent / 100)
+
+# Test 
+print('Exercise 3:', apply_discount(100, 25))   
+print('Exercise 3:', apply_discount(80, 10))  
+
+##########################################
 # Exercise 4: Convert Temperature
 #
 # Write a function called `convert_temperature` that takes a
@@ -95,14 +86,22 @@ print('Exercise 3:', apply_discount(100, 25))
 # Define the function and then call it below.
 
 
+# ANS EX.4
 
+def convert_temperature(temp, unit):
+    if unit == 'C':  
+        return (temp * 9/5) + 32   # change C TO F
+    elif unit == 'F':  
+        return (temp - 32) * 5/9   # change F into C
+    else:
+        return "Invalid unit. Use 'C' or 'F'"  # if user writes wrong letter
+
+# testing 
 print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
 print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
-```
 
-## Exercise 5: Sum to N
 
-```python
+###########################################
 # Exercise 5: Sum to N
 #
 # Write a function named `sum_to` that takes a single integer n and returns the sum of all integers from 1 to n.
@@ -113,14 +112,19 @@ print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
 #
 # Define the function and then call it below.
 
+# ANS EX.5
 
+def sum_to(n):
+    total = 0   # start with 0
+    for i in range(1, n+1):  # loop from 1 to n
+        total += i   # keep adding numbers
+    return total
 
-print('Exercise 5:', sum_to(6))
-```
+# testing 
+print('Exercise 5:', sum_to(6))   # should be 21
+print('Exercise 5:', sum_to(10))  # should be 55
 
-## Exercise 6: Find the Largest Number
-
-```python
+###########################################
 # Exercise 6: Find the Largest Number
 #
 # Write a function named `largest` that takes three integers as arguments and returns the largest of them.
@@ -131,14 +135,18 @@ print('Exercise 5:', sum_to(6))
 #
 # Define your function and test it with different inputs.
 
+# ANS EX.6
 
+def largest(a, b, c):
+    # to find the largest
+    return max(a, b, c)
 
-print('Exercise 6:', largest(1, 2, 3))
-```
+# trying 
+print('Exercise 6:', largest(1, 2, 3))   
+print('Exercise 6:', largest(10, 4, 2))  
+print('Exercise 6:', largest(7, 15, 9))  
 
-## Exercise 7: Calculate a Tip
-
-```python
+###########################################
 # Exercise 7: Calculate a Tip
 #
 # Create a function called `calculate_tip`. It should take the bill amount and the tip percentage (as a whole number).
@@ -150,13 +158,16 @@ print('Exercise 6:', largest(1, 2, 3))
 # Write your function and test its output below.
 
 
+# ANS EX.7
 
-print('Exercise 7:', calculate_tip(50, 20))
-```
+def calculate_tip(bill, tip_percent):
+    return (bill * tip_percent) / 100  # find by percentage
 
-## Exercise 8: Calculate Product of Numbers
+# trying
+print('Exercise 7:', calculate_tip(50, 20))   
+print('Exercise 7:', calculate_tip(80, 15))   
 
-```python
+###########################################
 # Exercise 8: Calculate Product of Numbers
 #
 # Write a function named `product` that takes an arbitrary number of numbers, multiplies them, and returns the product.
@@ -169,13 +180,20 @@ print('Exercise 7:', calculate_tip(50, 20))
 # Define the function and call it with different sets of numbers to test.
 
 
+# ANS EX.8
 
-print('Exercise 8:', product(2, 5, 5))
-```
+def product(*args):
+    result = 1  # start with 1 
+    for num in args:  
+        result *= num  # multiply
+    return result
 
-## Exercise 9: Basic Calculator
+# trying  
+print('Exercise 8:', product(-1, 4))      
+print('Exercise 8:', product(2, 5, 5))    
+print('Exercise 8:', product(3, 3, 2, 2)) 
 
-```python
+###########################################
 # Exercise 9: Basic Calculator
 #
 # Create a function named `basic_calculator` that takes three arguments: 
@@ -193,5 +211,26 @@ print('Exercise 8:', product(2, 5, 5))
 
 
 
-print('Exercise 9 Result:', basic_calculator(10, 5, "subtract"))
-```
+# ANS EX.9
+
+def basic_calculator(a, b, operation):
+    if operation == 'add':
+        return a + b
+    elif operation == 'subtract':
+        return a - b
+    elif operation == 'multiply':
+        return a * b
+    elif operation == 'divide':
+        if b != 0:
+            return a / b
+        else:
+            return "Cannot divide by zero"
+    else:
+        return "Unknown operation"  # id wronge
+
+# testing 
+print('Exercise 9 Result:', basic_calculator(10, 5, "subtract"))  
+print('Exercise 9 Result:', basic_calculator(10, 5, "add"))      
+print('Exercise 9 Result:', basic_calculator(10, 5, "multiply"))  
+print('Exercise 9 Result:', basic_calculator(10, 5, "divide"))    
+
